@@ -36,7 +36,7 @@ func shutdown_server(w http.ResponseWriter, r *http.Request, server http.Server)
 	w.Write([]byte("OK"))
     go func() {
         if err := s.Shutdown(context.Background()); err != nil {
-            log.Fatal(err);
+            log.Fatal(err)
         }
     }()
 }
