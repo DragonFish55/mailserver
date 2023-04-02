@@ -19,6 +19,7 @@ func createDbConnect(dbname string) (db *sql.DB, err_out error) {
 	return dbmain, err;
 }
 
+func register_user()
 
 func checkUserValid(password string, key string) bool{
 	return true

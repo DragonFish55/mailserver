@@ -1,8 +1,8 @@
 package main
 
 import (
-	
     _ "github.com/lib/pq"
+    "net/http"
 )
 
 //remote backend server address
@@ -15,3 +15,4 @@ var dbaddr string = "localhost"
 var dbport string = "5432"
 var dbuser string = ""
 var dbpass string = ""
+var servers map[string]http.Server

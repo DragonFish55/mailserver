@@ -3,29 +3,34 @@ package main
 
 
 type UserLogin struct {
-	Username string
-	Password string
+	username string
+	password string
 }
 
 type UserReg struct {
-	Username string
-	Password string
-	Confpass string
-	Fname    string
-	Lname    string
-	Bday     string
+	username string
+	password string
+	confpass string
+	fname    string
+	lname    string
+	bday     string
 }
 
-/*
 type Email struct {
 	sender   string
 	receiver string
 	content  string
-	date     string
+	datetime string
 	favorite bool
 	mailtype []MailType
 }
-*/
+
+type MailBox struct {
+	username string
+	Email []emails
+
+
+}
 
 type MailType interface {
 

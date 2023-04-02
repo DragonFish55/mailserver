@@ -7,16 +7,45 @@ import (
 	"encoding/json"
 )
 
-func createserver(serveraddr string){
+servers
+
+func create_server(address: string) {
+	
+	handler := http.NewServeMux()
+	s := &http.Server{
+		Addr:address,
+		Handler: handler
+	}
+
+	servers[address] = s
 
 	http.HandleFunc("/signup", regUser);
 	http.HandleFunc("/signin", loginUser);
 	http.HandleFunc("/logout", logoutUser);
-	http.HandleFunc("/logout", logoutUser);
+	http.HandleFunc("/logout", logout_user);
+	http.HandleFunc("/shutdown", shutdown_server(s));
 	http.ListenAndServe(saddress,nil);
 }
 
-func logoutUser(w http.ResponseWriter, r *http.Request){
+func time_check() {
+
+}
+
+
+func shutdown_server(w http.ResponseWriter, r *http.Request, server http.Server){
+	w.Write([]byte("OK"))
+    go func() {
+        if err := s.Shutdown(context.Background()); err != nil {
+            log.Fatal(err)
+        }
+    }()
+}
+
+func check_server_status(server http.Server) bool {
+
+}
+
+func logout_user(w http.ResponseWriter, r *http.Request){
 
 }
 
