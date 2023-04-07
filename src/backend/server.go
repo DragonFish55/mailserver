@@ -7,8 +7,6 @@ import (
 	"encoding/json"
 )
 
-servers
-
 func create_server(address: string) {
 	
 	handler := http.NewServeMux()
@@ -24,12 +22,12 @@ func create_server(address: string) {
 	http.HandleFunc("/logout", logoutUser);
 	http.HandleFunc("/logout", logout_user);
 	http.HandleFunc("/shutdown", shutdown_server(s));
+	http.HandleFunc("/newserver", create_server());
+	
 	http.ListenAndServe(saddress,nil);
 }
 
-func time_check() {
 
-}
 
 
 func shutdown_server(w http.ResponseWriter, r *http.Request, server http.Server){
