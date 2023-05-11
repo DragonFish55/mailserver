@@ -22,7 +22,7 @@ func create_server(address: string) {
 	http.HandleFunc("/logout", logoutUser);
 	http.HandleFunc("/logout", logout_user);
 	http.HandleFunc("/shutdown", shutdown_server(s));
-	http.HandleFunc("/newserver", create_server());
+	http.HandleFunc("/newservers", create_server());
 	
 	http.ListenAndServe(saddress,nil);
 }
