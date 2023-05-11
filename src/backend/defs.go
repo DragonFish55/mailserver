@@ -1,7 +1,5 @@
 package main
 
-
-
 type UserLogin struct {
 	username string
 	password string
@@ -27,14 +25,10 @@ type Email struct {
 
 type MailBox struct {
 	username string
-	Email []emails
-
-
+	emails   []Email
 }
 
 type MailType interface {
-
 	getCapacity() int
 	setCapacity()
-
 }

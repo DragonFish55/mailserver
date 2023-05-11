@@ -1,7 +1,5 @@
 package main
 
-
-
-func main(){
-	createserver(saddress);
+func main() {
+	create_server(saddress)
 }
